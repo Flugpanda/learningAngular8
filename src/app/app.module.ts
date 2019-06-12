@@ -7,6 +7,8 @@ import { FirstComponentComponent } from './first-component/first-component.compo
 import { SecondComponentComponent } from './second-component/second-component.component';
 import { ThirdComponentComponent } from './third-component/third-component.component';
 import { InterpolationComponent } from './interpolation/interpolation.component';
+import { PropertybindingComponent } from './propertybinding/propertybinding.component';
+import { ClassbindingsComponent } from './classbindings/classbindings.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { InterpolationComponent } from './interpolation/interpolation.component'
     FirstComponentComponent,
     SecondComponentComponent,
     ThirdComponentComponent,
-    InterpolationComponent
+    InterpolationComponent,
+    PropertybindingComponent,
+    ClassbindingsComponent
   ],
   imports: [
     BrowserModule,
