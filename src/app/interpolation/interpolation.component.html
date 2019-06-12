@@ -1,0 +1,17 @@
+<p>
+  Hallo {{ surName + ' ' + lastName }} !
+</p>
+<p>
+    Der Vorname {{ surName }} hat {{ surName.length }} Zeichen.
+</p>
+<p>
+    2 + 2 =  {{ 2+2 }}
+</p>
+<p>
+  {{ getNumer() }} ist die Antwort auf alle Fragen
+</p>
+<p>
+    Der direkte Zugriff auf window.location.href funktioniert innerhalb einer Interpolation nicht.<br>
+    Diese globalen JavaScript-Variablen sind nur Über die Komponente zugreifbar.<br>
+     {{ location }}
+</p>
