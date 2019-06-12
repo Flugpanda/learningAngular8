@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { SecondComponentComponent } from './second-component/second-component.component';
 import { ThirdComponentComponent } from './third-component/third-component.component';
@@ -12,6 +13,10 @@ import { ClassbindingsComponent } from './classbindings/classbindings.component'
 import { StylebindingComponent } from './stylebinding/stylebinding.component';
 import { EventbindingComponent } from './eventbinding/eventbinding.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
+import { NgifComponent } from './ngif/ngif.component';
+import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { NgforComponent } from './ngfor/ngfor.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +29,16 @@ import { DatabindingComponent } from './databinding/databinding.component';
     ClassbindingsComponent,
     StylebindingComponent,
     EventbindingComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    TwowaybindingComponent,
+    NgifComponent,
+    NgswitchComponent,
+    NgforComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
