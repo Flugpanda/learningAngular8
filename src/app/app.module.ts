@@ -17,6 +17,8 @@ import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component'
 import { NgifComponent } from './ngif/ngif.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { NgforComponent } from './ngfor/ngfor.component';
+import { ComponentinteractionParentComponent } from './componentinteraction-parent/componentinteraction-parent.component';
+import { ComponentinteractionChildComponent } from './componentinteraction-child/componentinteraction-child.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NgforComponent } from './ngfor/ngfor.component';
     TwowaybindingComponent,
     NgifComponent,
     NgswitchComponent,
-    NgforComponent
+    NgforComponent,
+    ComponentinteractionParentComponent,
+    ComponentinteractionChildComponent
   ],
   imports: [
     BrowserModule,
