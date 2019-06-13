@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './IEmployee';
 import { Observable } from 'rxjs';
+
+import { catchError } from 'rxjs/operators';
+import { throwError as ObservableThtrowError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +23,17 @@ export class EmployeeHTTPService {
   getEmployees(): Observable<IEmployee[]> {
     // do a http request to the mocked url
     // casting the observable/result to a Emolyee array
-    return this.http.get<IEmployee[]>(this._url);
+    return this.http.get<IEmployee[]>(this._url).pipe(
+                    catchError(this.errorHandler));
+  }
+
+  /**
+   * handling the errors per observable
+   *
+   * @param error the error from the http get
+   */
+  errorHandler(error: HttpErrorResponse){
+    // if error has no message return a default message instead
+    return ObservableThtrowError(error.message || "Server Error");
   }
 }

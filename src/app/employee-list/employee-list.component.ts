@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeHTTPService } from '../employee-http.service';
+import { error } from 'util';
 
 @Component({
   selector: 'app-employee-list',
   template: `
   <p>EmployeeListComponent</p>
+  <p>{{ errorMessage }}</p>
   <ul *ngFor="let employee of employees">
     <li> ID:{{ employee.id }} Name:{{ employee.name }} Age:{{employee.age}}
   </ul>
@@ -14,6 +16,7 @@ import { EmployeeHTTPService } from '../employee-http.service';
 export class EmployeeListComponent implements OnInit {
 
   public employees = [];
+  public errorMessage;
 
   constructor(private _httpService: EmployeeHTTPService) { }
 
@@ -26,7 +29,8 @@ export class EmployeeListComponent implements OnInit {
      * We assign that data to the class propperty using => "Fat Arrow Syntax"
      */
     this._httpService.getEmployees()
-        .subscribe(data => this.employees = data);
+        .subscribe(data => this.employees = data,
+                   error => this.errorMessage = error);
   }
 
 }
