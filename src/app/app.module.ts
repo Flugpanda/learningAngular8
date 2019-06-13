@@ -19,6 +19,9 @@ import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { ComponentinteractionParentComponent } from './componentinteraction-parent/componentinteraction-parent.component';
 import { ComponentinteractionChildComponent } from './componentinteraction-child/componentinteraction-child.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -37,14 +40,16 @@ import { ComponentinteractionChildComponent } from './componentinteraction-child
     NgswitchComponent,
     NgforComponent,
     ComponentinteractionParentComponent,
-    ComponentinteractionChildComponent
+    ComponentinteractionChildComponent,
+    EmployeeComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
