@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +23,6 @@ import { ComponentinteractionChildComponent } from './componentinteraction-child
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeService } from './employee.service';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +44,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     ComponentinteractionChildComponent,
     EmployeeComponent,
     EmployeeDetailComponent,
-    EmployeeListComponent
+    // contains a list of all the components that are used for routing
+    routingComponents
   ],
   imports: [
     BrowserModule,
