@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FirstComponentComponent } from './first-component/first-component.component';
 
 /**
  * Here we define all possible routs for the application.
@@ -10,10 +12,21 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
  *    - component: the component that will be rendered when naviaging to this path
  */
 const routes: Routes = [
+  // this will serve as the default rout of the app root route
+  // /
+  { path: '',             component: FirstComponentComponent},
+
   // /departments
   { path: 'departments',  component: DepartmentListComponent },
   // /employees
-  { path: 'employees',    component: EmployeeListComponent }
+  { path: 'employees',    component: EmployeeListComponent },
+
+  // this will automatically redirect a given path to another
+  { path: 'employeeList', redirectTo: '/employees', pathMatch: 'full'},
+
+  // Wildcard route that matches all urls except of those that are defined aboute.
+  // Theirfore ist has to be always the last route in the configuration!
+  { path: '**',           component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -34,5 +47,7 @@ export class AppRoutingModule { }
  */
 export const routingComponents = [
   DepartmentListComponent,
-  EmployeeListComponent
+  EmployeeListComponent,
+  PageNotFoundComponent,
+  FirstComponentComponent
 ]

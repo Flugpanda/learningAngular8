@@ -5,7 +5,6 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FirstComponentComponent } from './first-component/first-component.component';
 import { SecondComponentComponent } from './second-component/second-component.component';
 import { ThirdComponentComponent } from './third-component/third-component.component';
 import { InterpolationComponent } from './interpolation/interpolation.component';
@@ -27,7 +26,6 @@ import { EmployeeService } from './employee.service';
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponentComponent,
     SecondComponentComponent,
     ThirdComponentComponent,
     InterpolationComponent,
@@ -45,7 +43,7 @@ import { EmployeeService } from './employee.service';
     EmployeeComponent,
     EmployeeDetailComponent,
     // contains a list of all the components that are used for routing
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,
