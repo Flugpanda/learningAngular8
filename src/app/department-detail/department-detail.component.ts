@@ -59,7 +59,7 @@ export class DepartmentDetailComponent implements OnInit {
    */
   goPrevious(){
     let previousID = this.departmentid -1;
-    this.router.navigate(['/departments', previousID])
+    this.router.navigate(['/departments', previousID]);
   }
 
   /**
@@ -67,14 +67,16 @@ export class DepartmentDetailComponent implements OnInit {
    */
   goNext() {
     let nextID = this.departmentid + 1;
-    this.router.navigate(['/departments', nextID])
+    this.router.navigate(['/departments', nextID]);
   }
 
   goBackToList() {
     let selectedId = this.departmentid ? this.departmentid : null;
 
     // {id: selectedId} is a optional url routing parameter
-    this.router.navigate(['/departments', {id: selectedId}]);
+    //this.router.navigate(['/departments', {id: selectedId}]);
+
+    this.router.navigate(['../', { id: selectedId }], { relativeTo: this.activeRoute });
   }
 
 }

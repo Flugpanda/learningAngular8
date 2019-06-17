@@ -59,9 +59,16 @@ export class DepartmentListComponent implements OnInit {
      *
      * ['/departments', department.id] wil result in /departments/<id>
      */
-    this.router.navigate(['/departments', department.id]);
+    //this.router.navigate(['/departments', department.id]);
+
+    this.router.navigate([department.id], {relativeTo: this.activeRoute});
   }
 
+  /**
+   * method for helping with classbinding
+   *
+   * @param department the current department element from the itteration with *ngFor
+   */
   isSelected(department) {
     // === 	equal value and equal type
     return this.selectedId === department.id;
