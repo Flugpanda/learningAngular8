@@ -5,6 +5,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
+import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
+import { DepartmentContactComponent } from './department-contact/department-contact.component';
 
 /**
  * Here we define all possible routs for the application.
@@ -22,7 +24,14 @@ const routes: Routes = [
 
   // /departments/{id}
   // this route will contain an id as an identifier for the component in REST like fastion
-  { path: 'departments/:id',  component: DepartmentDetailComponent },
+  { path: 'departments/:id',  component: DepartmentDetailComponent,
+    // /departments/{id}/overview
+    // /departments/{id}/contact
+    children: [
+      { path: 'overview',  component: DepartmentOverviewComponent },
+      { path: 'contact',   component: DepartmentContactComponent }
+    ]
+  },
 
   // /employees
   { path: 'employees',    component: EmployeeListComponent },
@@ -56,5 +65,7 @@ export const routingComponents = [
   EmployeeListComponent,
   PageNotFoundComponent,
   FirstComponentComponent,
-  DepartmentDetailComponent
+  DepartmentDetailComponent,
+  DepartmentContactComponent,
+  DepartmentOverviewComponent
 ]
